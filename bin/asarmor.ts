@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import { Command, InvalidArgumentError } from '@commander-js/extra-typings';
 import { open, createBloatPatch, encrypt } from '../src';
-import { version } from '../package.json';
 
 function parseNumber(value: string, isRequired: boolean) {
   if (value == null && !isRequired) {
@@ -18,7 +17,7 @@ function parseNumber(value: string, isRequired: boolean) {
 }
 
 const program = new Command()
-  .version(version)
+  .version('0.0.1')
   .requiredOption('-a, --archive <archive>', 'input asar file (required)')
   .requiredOption('-o, --output <output>', 'output asar file (required)')
   .option('-b, --backup', 'create backup')
